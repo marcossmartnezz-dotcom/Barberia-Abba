@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Barbería Abba — Las Palmas de Gran Canaria</title>
+<meta name="description" content="Barbería Abba. El arte de la barbería clásica en Las Palmas. Cortes precisos, barba esculpida y un ritual masculino con más de 6 años de tradición." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--surface:#121212;--surface2:#1A1A1A;--text:#FAFAFA;--muted:#A1A1AA;--gold:#D4AF37;--gold-hover:#F3D87A;--border:#27272A;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+::selection{background:var(--gold);color:#000}
+.serif{font-family:'Playfair Display',Georgia,serif}
+a{color:inherit;text-decoration:none;transition:color .25s}
+img{display:block;max-width:100%;height:auto}
+.container{max-width:1280px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 48px}}
+.label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:11px;padding:18px 32px;transition:all .25s;cursor:pointer;border:none;font-family:inherit}
+.btn-primary{background:var(--gold);color:#000}
+.btn-primary:hover{background:var(--gold-hover)}
+.btn-outline{border:1px solid rgba(255,255,255,.2);color:var(--text);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:22px;height:22px;color:var(--gold)}
+.logo-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-.5px}
+.logo-sub{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#71717A}
+.nav-links{display:none;gap:40px;list-style:none}
+@media(min-width:1024px){.nav-links{display:flex}}
+.nav-links a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.nav-links a:hover{color:var(--gold)}
+/* Hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://images.pexels.com/photos/17027433/pexels-photo-17027433.jpeg?auto=compress&w=1920') center/cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#000,rgba(0,0,0,.7) 40%,rgba(0,0,0,.4))}
+.hero-content{position:relative;width:100%;padding:80px 0 96px;display:grid;gap:40px}
+@media(min-width:768px){.hero-content{grid-template-columns:2fr 1fr;align-items:end}}
+.rating{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+.rating-text{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#d4d4d8}
+h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(48px,8vw,112px);line-height:.95;letter-spacing:-.03em;margin-bottom:32px}
+.italic-gold{font-style:italic;font-weight:500;color:var(--gold)}
+.hero-text{color:#d4d4d8;max-width:560px;font-size:18px;margin-bottom:40px;line-height:1.6}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
+.hero-aside{border-left:1px solid rgba(212,175,55,.4);padding-left:24px;display:flex;flex-direction:column;gap:24px}
+.hero-aside .label{font-size:10px;color:#71717A;margin-bottom:4px;display:block}
+.hero-aside .val{font-family:'Playfair Display',serif;font-size:24px}
+/* Section */
+section{padding:96px 0;border-top:1px solid rgba(255,255,255,.05);position:relative}
+@media(min-width:768px){section{padding:128px 0}}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:56px}
+h2{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-.02em;max-width:700px}
+/* Services */
+.services-grid{display:grid;gap:0 64px}
+@media(min-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
+.service{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.1);text-align:left;background:transparent;border-left:none;border-right:none;border-top:none;width:100%;cursor:pointer;color:inherit;font-family:inherit;transition:border-color .25s}
+.service:hover{border-bottom-color:rgba(212,175,55,.5)}
+.service-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.service-name{font-family:'Playfair Display',serif;font-size:28px;display:flex;align-items:center;gap:12px;transition:color .25s}
+.service:hover .service-name{color:var(--gold)}
+.badge-top{font-size:9px;letter-spacing:.25em;text-transform:uppercase;background:rgba(212,175,55,.15);color:var(--gold);padding:4px 8px}
+.service-meta{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.service-time{font-size:12px;color:#71717A}
+.service-price{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold)}
+.service-desc{font-size:14px;color:#71717A;padding-right:16px}
+/* About */
+.about-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:768px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-img-wrap{position:relative}
+.about-img{aspect-ratio:4/5;overflow:hidden;background:#1a1a1a}
+.about-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .7s}
+.about-img:hover img{filter:grayscale(0)}
+.about-stat{position:absolute;bottom:-24px;right:-24px;background:var(--gold);color:#000;padding:24px;max-width:200px;display:none}
+@media(min-width:640px){.about-stat{display:block}}
+.about-stat-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;line-height:1}
+.about-stat-label{font-size:10px;letter-spacing:.25em;text-transform:uppercase;margin-top:8px}
+.about-text p{color:#a1a1aa;font-size:18px;margin-bottom:20px;line-height:1.6}
+.about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+.about-stats .num{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold)}
+.about-stats .lbl{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#71717A;margin-top:4px}
+/* Team */
+.team-bg{background:#0d0d0d}
+.team-grid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:640px){.team-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+.barber{position:relative;overflow:hidden;background:#1a1a1a}
+.barber-img{aspect-ratio:3/4;overflow:hidden}
+.barber-img img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:all .7s}
+.barber:hover .barber-img img{filter:grayscale(0);transform:scale(1.05)}
+.barber-overlay{position:absolute;inset:0;background:linear-gradient(to top,#000,rgba(0,0,0,.4),transparent)}
+.barber-info{position:absolute;bottom:0;left:0;right:0;padding:24px}
+.barber-tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.barber-name{font-family:'Playfair Display',serif;font-size:28px;font-weight:700}
+.barber-spec{font-size:14px;color:#d4d4d8;margin-top:4px}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:768px){.gallery{grid-template-columns:repeat(3,1fr);gap:16px}}
+.gallery div{position:relative;overflow:hidden;aspect-ratio:1}
+.gallery div img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:all .7s}
+.gallery div:hover img{filter:grayscale(0);transform:scale(1.05)}
+/* Testimonials */
+.testimonials-bg{background:#0d0d0d}
+.testimonials-head{text-align:center;margin-bottom:64px}
+.testimonials-grid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:768px){.testimonials-grid{grid-template-columns:1fr 1fr}}
+.testimonial{position:relative;background:var(--surface);border:1px solid rgba(255,255,255,.05);padding:32px;transition:border-color .25s}
+.testimonial:hover{border-color:rgba(212,175,55,.3)}
+.testimonial-quote{position:absolute;top:24px;right:24px;font-size:60px;color:rgba(212,175,55,.2);font-family:Georgia,serif;line-height:1}
+.testimonial-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.testimonial-text{font-size:17px;color:#d4d4d8;margin-bottom:24px;line-height:1.6}
+.testimonial-author{padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+.testimonial-name{font-family:'Playfair Display',serif;font-size:20px}
+.testimonial-role{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#71717A;margin-top:4px}
+/* Booking */
+.booking-section{background:linear-gradient(to bottom,#0A0A0A,#121212);text-align:center}
+.booking-head{max-width:720px;margin:0 auto 64px}
+.booking-head h2{margin:0 auto 24px}
+.booking-cta{background:#0a0a0a;border:1px solid rgba(255,255,255,.1);padding:48px 24px;text-align:center}
+@media(min-width:768px){.booking-cta{padding:64px 48px}}
+.booking-cta h3{font-family:'Playfair Display',serif;font-size:32px;margin-bottom:16px}
+.booking-cta p{color:#a1a1aa;margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto}
+.booking-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1ebd5a}
+/* Contact */
+.contact-grid{display:grid;gap:40px}
+@media(min-width:768px){.contact-grid{grid-template-columns:5fr 7fr}}
+.contact-item{display:flex;gap:16px;margin-bottom:32px}
+.contact-icon{color:var(--gold);flex-shrink:0;margin-top:4px}
+.contact-label{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#71717A;margin-bottom:4px}
+.contact-value{color:#e4e4e7;font-size:18px;line-height:1.5}
+.contact-value:hover{color:var(--gold)}
+.hours{display:flex;flex-direction:column;gap:6px;font-size:14px;max-width:280px}
+.hour-row{display:flex;justify-content:space-between;gap:32px}
+.hour-row .day{color:#a1a1aa}
+.hour-row .time{color:#e4e4e7;font-weight:500}
+.hour-row .closed{color:#52525b}
+.map-wrap{aspect-ratio:4/4;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:invert(.92) hue-rotate(180deg) saturate(.4)}
+/* FAQ */
+.faq-bg{background:#0d0d0d}
+.faq-wrap{max-width:760px;margin:0 auto}
+.faq-head{text-align:center;margin-bottom:48px}
+details{background:var(--surface);border:1px solid rgba(255,255,255,.1);padding:0 24px;margin-bottom:8px;transition:border-color .25s}
+details:hover{border-color:rgba(212,175,55,.3)}
+summary{cursor:pointer;padding:20px 0;font-size:17px;font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';color:var(--gold);font-size:24px;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details[open] summary{color:var(--gold)}
+.faq-answer{padding:0 0 20px;color:#a1a1aa;line-height:1.7}
+/* Footer */
+footer{background:#000;border-top:1px solid rgba(255,255,255,.1);padding:64px 0}
+.footer-grid{display:grid;gap:40px;margin-bottom:48px}
+@media(min-width:768px){.footer-grid{grid-template-columns:5fr 3fr 4fr}}
+.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-desc{color:#71717A;font-size:14px;max-width:380px;line-height:1.6}
+.footer-socials{display:flex;gap:12px;margin-top:24px}
+.footer-socials a{width:40px;height:40px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .25s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-title{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#71717A;margin-bottom:16px}
+.footer-list{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.footer-list a:hover,.footer-list li:hover{color:var(--gold)}
+.footer-bottom{padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;letter-spacing:.05em;color:#52525b}
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:50;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 10px 25px rgba(0,0,0,.5);animation:pulse 2.2s infinite}
+.wa-float:hover{background:#1ebd5a}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5),0 10px 25px rgba(0,0,0,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0),0 10px 25px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0),0 10px 25px rgba(0,0,0,.5)}}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background:#0A0A0A}::-webkit-scrollbar-thumb{background:#27272A}::-webkit-scrollbar-thumb:hover{background:var(--gold)}
+
+/* === Mobile optimizations === */
+@media(max-width:767px){
+  .container{padding:0 20px}
+  section{padding:64px 0}
+  .nav{height:64px}
+  .logo-name{font-size:17px}
+  .logo-sub{font-size:9px;letter-spacing:.2em}
+  header .btn{display:none}  /* hide header CTA, use WA float on mobile */
+  .hero{min-height:100vh}
+  .hero-content{padding:100px 0 64px;gap:24px}
+  h1{font-size:44px;line-height:1;margin-bottom:24px}
+  .hero-text{font-size:16px;margin-bottom:28px;line-height:1.5}
+  .hero-buttons{flex-direction:column;width:100%}
+  .hero-buttons .btn{width:100%;justify-content:center;padding:18px 24px}
+  .rating{margin-bottom:24px;flex-wrap:wrap;gap:8px}
+  .rating-text{font-size:10px}
+  h2{font-size:32px;line-height:1.1}
+  .section-head{margin-bottom:40px;gap:16px}
+  .label{font-size:10px;letter-spacing:.25em}
+  .services-grid{gap:0}
+  .service{padding:20px 0}
+  .service-name{font-size:22px;flex-wrap:wrap;gap:8px}
+  .service-price{font-size:20px}
+  .service-time{font-size:11px}
+  .badge-top{font-size:8px;padding:3px 6px}
+  .about-grid{gap:32px}
+  .about-img-wrap .about-stat{display:none}
+  .about-text p{font-size:16px}
+  .about-stats{gap:12px;margin-top:32px;padding-top:24px}
+  .about-stats .num{font-size:24px}
+  .about-stats .lbl{font-size:9px;letter-spacing:.2em}
+  .barber-name{font-size:22px}
+  .barber-spec{font-size:12px}
+  .barber-info{padding:18px}
+  .booking-cta{padding:32px 20px}
+  .booking-cta h3{font-size:24px}
+  .booking-cta p{font-size:14px}
+  .booking-buttons{flex-direction:column;width:100%}
+  .booking-buttons .btn{width:100%;justify-content:center;padding:18px 16px;font-size:10px;letter-spacing:.15em}
+  .contact-item{margin-bottom:24px;gap:12px}
+  .contact-value{font-size:16px}
+  .hours{font-size:13px}
+  .hour-row{gap:24px}
+  .map-wrap{aspect-ratio:4/3}
+  details{padding:0 18px}
+  summary{font-size:15px;padding:18px 0;gap:12px}
+  .faq-answer{font-size:14px}
+  .testimonial{padding:24px}
+  .testimonial-text{font-size:15px}
+  .testimonial-name{font-size:18px}
+  .testimonial-quote{font-size:48px}
+  .footer-grid{gap:32px;margin-bottom:32px}
+  footer{padding:48px 0}
+  .footer-bottom{font-size:10px;flex-direction:column;gap:8px;text-align:left}
+  .wa-float{bottom:18px;right:18px;width:52px;height:52px}
+  /* Mobile sticky CTA */
+  .mobile-sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(10,10,10,.95);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.1);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));display:flex;gap:8px}
+  .mobile-sticky-cta a{flex:1;text-align:center;padding:14px 8px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+  body{padding-bottom:72px}
+  .wa-float{bottom:84px}
+}
+@media(min-width:768px){.mobile-sticky-cta{display:none}}
+
+/* Tablet small adjustments */
+@media(min-width:768px) and (max-width:1023px){
+  h1{font-size:64px}
+  h2{font-size:44px}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="#hero" class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        <div>
+          <div class="logo-name">Barbería Abba</div>
+          <div class="logo-sub">Las Palmas · Est. desde 2018</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#equipo">Equipo</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#opiniones">Opiniones</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a href="https://wa.me/34631457305?text=Hola%20Barber%C3%ADa%20Abba%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita" class="btn btn-primary" target="_blank">Reservar cita</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="hero" style="border:none;padding:0">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div>
+      <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-text">4.9 · Más de 800 clientes satisfechos</span>
+      </div>
+      <h1>El arte de la<br><span class="italic-gold">barbería clásica</span><br>en Las Palmas.</h1>
+      <p class="hero-text">Cortes precisos, barba esculpida y un ritual masculino con más de 6 años perfeccionando la tradición. Pide tu cita en menos de 30 segundos.</p>
+      <div class="hero-buttons">
+        <a href="#reservar" class="btn btn-primary">Reservar cita ahora →</a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios y precios</a>
+      </div>
+    </div>
+    <aside class="hero-aside">
+      <div><span class="label">Atención</span><div class="val">Sin esperas</div></div>
+      <div><span class="label">Estilo</span><div class="val">Personalizado</div></div>
+      <div><span class="label">Experiencia</span><div class="val">+ 6 años</div></div>
+    </aside>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label" style="margin-bottom:16px">— Carta de servicios</div>
+        <h2>Cada corte, una <span class="italic-gold">declaración.</span></h2>
+      </div>
+      <p class="muted" style="max-width:400px">Servicios pensados para el hombre moderno que valora la tradición, el detalle y el tiempo bien invertido.</p>
+    </div>
+    <div class="services-grid">
+      <button class="service"><div class="service-top"><div class="service-name">Corte Clásico</div><div class="service-meta"><span class="service-time">30 min</span><span class="service-price">14€</span></div></div><p class="service-desc">Corte de cabello a tijera y máquina con acabado profesional.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Corte Premium <span class="badge-top">★ Top</span></div><div class="service-meta"><span class="service-time">45 min</span><span class="service-price">18€</span></div></div><p class="service-desc">Corte personalizado, lavado, masaje capilar y peinado.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Arreglo de Barba</div><div class="service-meta"><span class="service-time">25 min</span><span class="service-price">10€</span></div></div><p class="service-desc">Perfilado de barba con toalla caliente, aceites y bálsamo.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Corte + Barba <span class="badge-top">★ Top</span></div><div class="service-meta"><span class="service-time">55 min</span><span class="service-price">22€</span></div></div><p class="service-desc">Combinación completa: corte personalizado y arreglo de barba premium.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Afeitado Clásico</div><div class="service-meta"><span class="service-time">35 min</span><span class="service-price">15€</span></div></div><p class="service-desc">Afeitado tradicional con navaja, toalla caliente y after shave.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Ritual Padre e Hijo</div><div class="service-meta"><span class="service-time">60 min</span><span class="service-price">25€</span></div></div><p class="service-desc">Experiencia compartida: corte para padre e hijo en sesión exclusiva.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Camuflaje de Canas</div><div class="service-meta"><span class="service-time">30 min</span><span class="service-price">18€</span></div></div><p class="service-desc">Coloración estratégica para difuminar canas con resultado natural.</p></button>
+      <button class="service"><div class="service-top"><div class="service-name">Tratamiento Capilar</div><div class="service-meta"><span class="service-time">40 min</span><span class="service-price">20€</span></div></div><p class="service-desc">Tratamiento revitalizante para cuero cabelludo y cabello.</p></button>
+    </div>
+    <p class="muted" style="margin-top:40px;font-size:12px;letter-spacing:.05em">* Los precios pueden variar según el largo del cabello y el servicio adicional solicitado.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section id="nosotros">
+  <div class="container about-grid">
+    <div class="about-img-wrap">
+      <div class="about-img"><img src="https://images.pexels.com/photos/4625619/pexels-photo-4625619.jpeg?auto=compress&w=1200" alt="Barbero trabajando"/></div>
+      <div class="about-stat">
+        <div class="about-stat-num">6+</div>
+        <div class="about-stat-label">Años perfeccionando el oficio</div>
+      </div>
+    </div>
+    <div class="about-text">
+      <div class="label" style="margin-bottom:16px">— Sobre Abba</div>
+      <h2 style="margin-bottom:32px">Donde la <span class="italic-gold">tradición</span><br>se afila cada día.</h2>
+      <p>En el corazón de Las Palmas de Gran Canaria, en la calle Néstor de la Torre, Barbería Abba nació con un propósito claro: devolverle al hombre el ritual del cuidado personal sin atajos ni prisas.</p>
+      <p>Cada cliente que cruza nuestras puertas recibe una atención personalizada, una toalla caliente y la certeza de salir con un acabado impecable. Aquí no cortamos pelo: <span style="color:#e4e4e7">esculpimos confianza</span>.</p>
+      <div class="about-stats">
+        <div><div class="num">+800</div><div class="lbl">Clientes fieles</div></div>
+        <div><div class="num">4.9</div><div class="lbl">Valoración Google</div></div>
+        <div><div class="num">3</div><div class="lbl">Barberos expertos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="equipo" class="team-bg">
+  <div class="container">
+    <div style="margin-bottom:56px;max-width:640px">
+      <div class="label" style="margin-bottom:16px">— El equipo</div>
+      <h2>Manos con <span class="italic-gold">historia</span>, ojo entrenado.</h2>
+    </div>
+    <div class="team-grid">
+      <div class="barber"><div class="barber-img"><img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&w=800" alt="Marco"/></div><div class="barber-overlay"></div><div class="barber-info"><div class="barber-tag">01 · Barbero</div><div class="barber-name">Marco</div><div class="barber-spec">Fades & diseños modernos</div></div></div>
+      <div class="barber"><div class="barber-img"><img src="https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&w=800" alt="Diego"/></div><div class="barber-overlay"></div><div class="barber-info"><div class="barber-tag">02 · Barbero</div><div class="barber-name">Diego</div><div class="barber-spec">Barbería clásica & afeitado a navaja</div></div></div>
+      <div class="barber"><div class="barber-img"><img src="https://images.pexels.com/photos/14705013/pexels-photo-14705013.jpeg?auto=compress&w=800" alt="Samuel"/></div><div class="barber-overlay"></div><div class="barber-info"><div class="barber-tag">03 · Barbero</div><div class="barber-name">Samuel</div><div class="barber-spec">Cortes urbanos & coloración</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="galeria">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="label" style="margin-bottom:16px">— Galería</div>
+        <h2>Nuestro <span class="italic-gold">trabajo</span>, sin filtros.</h2>
+      </div>
+      <p class="muted" style="max-width:340px;font-size:14px">Una selección de cortes y barbas reales firmados por nuestro equipo.</p>
+    </div>
+    <div class="gallery">
+      <div><img src="https://images.unsplash.com/photo-1635346125627-74d1b2867898?w=900" alt=""></div>
+      <div><img src="https://images.pexels.com/photos/6487890/pexels-photo-6487890.jpeg?auto=compress&w=900" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1672761431773-a4d77e8ca1d7?w=900" alt=""></div>
+      <div><img src="https://images.pexels.com/photos/4625619/pexels-photo-4625619.jpeg?auto=compress&w=900" alt=""></div>
+      <div><img src="https://images.pexels.com/photos/15932225/pexels-photo-15932225.jpeg?auto=compress&w=900" alt=""></div>
+      <div><img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&w=900" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="opiniones" class="testimonials-bg">
+  <div class="container">
+    <div class="testimonials-head">
+      <div class="label" style="margin-bottom:16px">— Lo que dicen</div>
+      <h2 style="margin:0 auto"><span class="italic-gold">4.9</span> sobre 5,<br>en boca de quienes nos eligen.</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial"><div class="testimonial-quote">"</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"El mejor sitio donde he estado. Cuidan cada detalle, el ambiente es top y siempre salgo con el corte que pedí. Marco un crack."</p><div class="testimonial-author"><div class="testimonial-name">Carlos M.</div><div class="testimonial-role">Cliente desde 2021</div></div></div>
+      <div class="testimonial"><div class="testimonial-quote">"</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Llevo años yendo a Abba. Profesionales de verdad, te escuchan y te asesoran. La barba siempre impecable."</p><div class="testimonial-author"><div class="testimonial-name">Javier R.</div><div class="testimonial-role">Cliente habitual</div></div></div>
+      <div class="testimonial"><div class="testimonial-quote">"</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Fui sin esperar mucho y salí flipando. El afeitado a navaja es una experiencia que todo hombre debería probar."</p><div class="testimonial-author"><div class="testimonial-name">Adrián G.</div><div class="testimonial-role">Nuevo cliente</div></div></div>
+      <div class="testimonial"><div class="testimonial-quote">"</div><div class="testimonial-stars">★★★★★</div><p class="testimonial-text">"Calidad, puntualidad y trato cercano. Diego me cuida el pelo como nadie. Recomendado 100%."</p><div class="testimonial-author"><div class="testimonial-name">Daniel P.</div><div class="testimonial-role">Cliente desde 2019</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking CTA -->
+<section id="reservar" class="booking-section">
+  <div class="container">
+    <div class="booking-head">
+      <div class="label" style="margin-bottom:16px">— Reserva online</div>
+      <h2>Reserva tu cita<br><span class="italic-gold">en menos de 30 segundos.</span></h2>
+    </div>
+    <div class="booking-cta">
+      <h3>Tu próxima cita, a un clic.</h3>
+      <p>Escríbenos por WhatsApp con tu nombre, servicio y hora preferida, o llama directamente. Te respondemos en menos de 30 minutos en horario de apertura.</p>
+      <div class="booking-buttons">
+        <a href="https://wa.me/34631457305?text=Hola%20Barber%C3%ADa%20Abba%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita.%0AServicio%3A%20%0AD%C3%ADa%20y%20hora%3A%20" class="btn btn-wa" target="_blank">Reservar por WhatsApp</a>
+        <a href="tel:+34631457305" class="btn btn-primary">Llamar al 631 45 73 05</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contacto">
+  <div class="container contact-grid">
+    <div>
+      <div class="label" style="margin-bottom:16px">— Visítanos</div>
+      <h2 style="margin-bottom:48px">Estamos en el corazón<br>de <span class="italic-gold">Las Palmas.</span></h2>
+      <div class="contact-item">
+        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><div class="contact-label">Dirección</div><a href="https://maps.google.com/?daddr=Calle+Néstor+de+la+Torre+44,+Las+Palmas" target="_blank" class="contact-value">Calle Néstor de la Torre, 44<br>35006 Las Palmas de Gran Canaria</a></div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><div class="contact-label">Teléfono</div><a href="tel:+34631457305" class="contact-value">+34 631 45 73 05</a></div>
+      </div>
+      <div class="contact-item">
+        <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div style="width:100%"><div class="contact-label" style="margin-bottom:8px">Horario</div>
+          <div class="hours">
+            <div class="hour-row"><span class="day">Lunes</span><span class="time">9:30 – 20:00</span></div>
+            <div class="hour-row"><span class="day">Martes</span><span class="time">9:30 – 20:00</span></div>
+            <div class="hour-row"><span class="day">Miércoles</span><span class="time">9:30 – 20:00</span></div>
+            <div class="hour-row"><span class="day">Jueves</span><span class="time">9:30 – 20:00</span></div>
+            <div class="hour-row"><span class="day">Viernes</span><span class="time">9:30 – 20:00</span></div>
+            <div class="hour-row"><span class="day">Sábado</span><span class="time">9:30 – 17:30</span></div>
+            <div class="hour-row"><span class="day">Domingo</span><span class="closed">Cerrado</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://www.google.com/maps?q=Calle+N%C3%A9stor+de+la+Torre+44+Las+Palmas+de+Gran+Canaria&output=embed" loading="lazy" title="Ubicación Barbería Abba"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-bg">
+  <div class="container faq-wrap">
+    <div class="faq-head">
+      <div class="label" style="margin-bottom:16px">— Dudas frecuentes</div>
+      <h2 style="margin:0 auto">Resolvemos tus <span class="italic-gold">preguntas.</span></h2>
+    </div>
+    <details><summary>¿Necesito reservar con antelación o puedo ir directamente?</summary><div class="faq-answer">Recomendamos reservar para garantizar tu hora con el barbero que prefieras. También aceptamos clientes sin cita previa según disponibilidad.</div></details>
+    <details><summary>¿Cómo confirmáis las citas?</summary><div class="faq-answer">Una vez recibimos tu solicitud, te contactamos en menos de 2 horas por teléfono o WhatsApp para confirmar día y hora exacta.</div></details>
+    <details><summary>¿Puedo pagar con tarjeta?</summary><div class="faq-answer">Sí. Aceptamos pago en efectivo, tarjeta y Bizum. Sin importe mínimo.</div></details>
+    <details><summary>¿Qué pasa si no puedo asistir a mi cita?</summary><div class="faq-answer">Si necesitas cancelar o reprogramar, te pedimos avisarnos con al menos 2 horas de antelación por WhatsApp o llamada.</div></details>
+    <details><summary>¿Hacéis cortes a niños?</summary><div class="faq-answer">Sí. Tenemos un servicio especial 'Ritual padre e hijo' y también cortes individuales infantiles.</div></details>
+    <details><summary>¿Qué productos usáis?</summary><div class="faq-answer">Trabajamos con marcas profesionales (Reuzel, American Crew, The Shaving Co.) y todos nuestros tratamientos están testados.</div></details>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+          <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700">Barbería Abba</div>
+        </div>
+        <p class="footer-desc">La barbería del hombre que valora la tradición, el detalle y el tiempo bien invertido. En el corazón de Las Palmas de Gran Canaria.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Explora</div>
+        <ul class="footer-list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#opiniones">Opiniones</a></li>
+          <li><a href="#reservar">Reservar</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Contacto</div>
+        <ul class="footer-list" style="color:#e4e4e7">
+          <li>Calle Néstor de la Torre, 44</li>
+          <li>35006 Las Palmas de Gran Canaria</li>
+          <li><a href="tel:+34631457305">+34 631 45 73 05</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Barbería Abba. Todos los derechos reservados.</div>
+      <div>Diseño con alma · Las Palmas, ES</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating button -->
+<a href="https://wa.me/34631457305?text=Hola%20Barber%C3%ADa%20Abba%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor"><path d="M19.11 17.21c-.27-.13-1.59-.78-1.83-.87-.25-.09-.43-.13-.61.13-.18.27-.7.87-.86 1.04-.16.18-.32.2-.59.07-.27-.13-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.41.12-.55.12-.12.27-.32.4-.48.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.13-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.46l-.52-.01c-.18 0-.48.07-.73.34s-.96.94-.96 2.28.98 2.65 1.12 2.83c.13.18 1.94 2.96 4.7 4.16.66.29 1.17.46 1.57.59.66.21 1.26.18 1.73.11.53-.08 1.59-.65 1.81-1.27.22-.62.22-1.15.16-1.27-.07-.11-.25-.18-.52-.31zm-4.95 6.78h-.01a9.96 9.96 0 0 1-5.07-1.39l-.36-.21-3.76.99 1-3.67-.24-.38a9.94 9.94 0 0 1-1.52-5.28c0-5.49 4.47-9.96 9.97-9.96 2.66 0 5.16 1.04 7.04 2.93a9.9 9.9 0 0 1 2.92 7.04c0 5.49-4.47 9.96-9.97 9.96zm8.49-18.43A11.94 11.94 0 0 0 14.16 2C7.49 2 2.06 7.43 2.06 14.1c0 2.13.56 4.21 1.61 6.04L2 26.13l6.13-1.61a12.04 12.04 0 0 0 6.03 1.54h.01c6.67 0 12.1-5.43 12.1-12.1 0-3.23-1.26-6.27-3.55-8.56z"/></svg>
+</a>
+
+<!-- Mobile sticky CTA (only mobile) -->
+<div class="mobile-sticky-cta">
+  <a href="tel:+34631457305" class="btn btn-outline">Llamar</a>
+  <a href="https://wa.me/34631457305?text=Hola%20Barber%C3%ADa%20Abba%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita" class="btn btn-primary" target="_blank">Reservar cita</a>
+</div>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
